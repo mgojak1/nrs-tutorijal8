@@ -6,7 +6,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.Op = Sequelize.Op;
 
-// Import modela
+
 db.gradovi = sequelize.import(__dirname + '/gradovi.js');
 
 module.exports = db;
