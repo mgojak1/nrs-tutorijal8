@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('gradovi', 'root', '123', {host: '127.0.0.1', dialect: 'mysql', logging: false});
+const sequelize = new Sequelize('gradovi', 'User', 'Pass', {host: '127.0.0.1', dialect: 'mysql', logging: false});
 const db = {};
 
 db.Sequelize = Sequelize;
