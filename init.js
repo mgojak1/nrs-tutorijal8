@@ -9,12 +9,11 @@ db.sequelize.sync({ force: true }).then(function () {
 
 function dataInit() {
     const listaGradova = [
-        db.gradovi.create({ID: 1, Naziv: 'Sarajevo',brojStanovnika: 300}),
-        db.gradovi.create({ID: 2, Naziv: 'Banja Luka',brojStanovnika: 200}),
-        db.gradovi.create({ID: 3, Naziv: 'Mostar',brojStanovnika: 100}),
-        db.gradovi.create({ID: 4, Naziv: 'Zenica',brojStanovnika: 80}),
-        db.gradovi.create({ID: 5, Naziv: 'Zenica',brojStanovnika: 123}),
-        db.gradovi.create({ID: 6, Naziv: 'Bihac',brojStanovnika: 321})
+        db.gradovi.create({id: 1, naziv: 'Sarajevo',brojStanovnika: 300}),
+        db.gradovi.create({id: 2, naziv: 'Banja Luka',brojStanovnika: 200}),
+        db.gradovi.create({id: 3, naziv: 'Mostar',brojStanovnika: 100}),
+        db.gradovi.create({id: 4, naziv: 'Zenica',brojStanovnika: 80}),
+        db.gradovi.create({id: 5, naziv: 'Bihac',brojStanovnika: 321})
     ];
 
     return new Promise((resolve, reject) => {

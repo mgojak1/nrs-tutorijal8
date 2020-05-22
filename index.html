@@ -2,15 +2,25 @@
 <html>
 <head>
 <title>NRS</title>
+<script>
+window.onload = function () {
+     fetch('/gradovi', { method: 'get'}).then((response) => {
+         const json = response.json();
+         if (response.ok) {
+             return json;
+         }
+         return Promise.reject(new Error('greska'));
+     })
+     .then((response) => {
+         document.getElementById('v').innerHTML = JSON.stringify(response);
+     }).catch((error) => {
+         document.getElementById('err').innerHTML = error && error.message || 'nesto nece.';
+     });
+};
+</script>
 </head>
 <body>
-<ul>
-    <li>Sarajevo</li>
-    <li>Tuzla</li>
-    <li>Banja Luka</li>
-    <li>Mostar</li>
-    <li>Zenica</li>
-    <li>Bihac</li>
-  </ul>
+<p id="v"></p>
+<p id="err"></p>
 </body>
-  
+</html>

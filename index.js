@@ -1,7 +1,7 @@
 const express = require("express");
 const db = require('./db/baza');
 const bodyParser = require('body-parser')
-const app = express();
+var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -37,5 +37,4 @@ app.put('/gradovi/:ID' , function(req, res)  {
     ).then( () => { res.json({ status : 'Zavrseno!'}) });
 });
 
-app.listen(8080);
-console.log("port je 8080...");
+module.exports = app.listen('8080' , () => {console.log('Listening port 8080...')});
